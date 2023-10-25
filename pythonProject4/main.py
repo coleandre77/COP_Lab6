@@ -11,18 +11,6 @@ def encode(passw):
             new_pass += '2'
     return new_pass
 
-def decode(passw):
-    dec_pass = ''
-    for i in passw:
-        if 3 <= int(i) <= 9:
-            dec_pass += str(int(i) - 3)
-        elif int(i) == 2:
-            dec_pass += '9'
-        elif int(i) == 1:
-            dec_pass += '8'
-        elif int(i) == 0:
-            dec_pass += '7'
-    return dec_pass
 
 
 
