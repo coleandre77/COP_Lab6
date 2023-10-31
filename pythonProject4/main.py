@@ -40,17 +40,21 @@ encoded_pass = ''
 decoded_pass = ''
 
 # Press the green button in the gutter to run the script.
-while __name__ == '__main__':
-    print('Menu\n-------------\n1. Encode\n2. Decode\n3. Quit')
-    option = int(input('Please enter an option: '))
+def main():
+    while True:
+        print('Menu\n-------------\n1. Encode\n2. Decode\n3. Quit')
+        option = int(input('Please enter an option: '))
+    
+        if option == 1:
+            input_pass = input('Please enter your password to encode: ')
+            encoded_pass = encode(input_pass)
+            print('Your password has been encoded and stored!')
+    
+        elif option == 2:
+            decoded_pass = decode(encoded_pass)
+            print(f'The encoded password is {encoded_pass}, and the original password is {decoded_pass}.')
+        elif option == 3:
+            exit()
 
-    if option == 1:
-        input_pass = input('Please enter your password to encode: ')
-        encoded_pass = encode(input_pass)
-        print('Your password has been encoded and stored!')
-
-    elif option == 2:
-        decoded_pass = decode(encoded_pass)
-        print(f'The encoded password is {encoded_pass}, and the original password is {decoded_pass}.')
-    elif option == 3:
-        exit()
+if __name__ == '__main__':
+    main()
